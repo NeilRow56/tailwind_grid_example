@@ -1,32 +1,130 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Home = () => {
   return (
-    <div className="grid gap-4 max-w-5xl p-4 sm:grid-cols-2 md:grid-cols-4 ">
-      <h1 className="text-4xl font-extrabold sm:col-span-2  sm:grid sm:grid-cols-2 sm:gap-4 md:grid-cols-3 md:col-span-3 md:text-5xl ">
-        <span className="bg-yellow-200 md:col-span-2 ">
-          Grid Layout with Tailwind css
-        </span>
-      </h1>
-      <p className="sm:row-start-2 sm:col-start-2 self-center md:col-start-1 md:col-span-2 md:pr-12 md:text-lg">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, in?
-        Eaque aperiam ipsum quas cumque, voluptatem aliquid laudantium maxime
-        similique praesentium. Repudiandae vel ratione, et fugit placeat nihil
-        incidunt minima.
-      </p>
-      <div className="bg-blue-500 h-auto sm:square"></div>
-      <div className="bg-blue-500 h-auto sm:square"></div>
-      <div className="bg-pink-500 h-auto sm:square"></div>
-      <div className="bg-blue-500 h-auto sm:square md:col-start-2"></div>
-      <div className="bg-pink-500 h-auto sm:square"></div>
-      <div className="bg-blue-500 h-auto sm:square"></div>
+    <div className="min-h-screen bg-gray-200 flex flex-col justify-center py-12 px-6 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-md">
+        <Image
+          width={12}
+          height={12}
+          className="mx-auto Name w-auto h-12"
+          src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+          alt="Workflow"
+        />
+        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+          Create your account
+        </h2>
+        <p className="mt-2 text-center text-sm text-gray-600 max-w">
+          Already registered?
+          <a
+            href="#"
+            className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          >
+            Sign in
+          </a>
+        </p>
+      </div>
 
-      <div className="bg-blue-500 h-auto sm:square"></div>
-      <div className="bg-pink-500 h-auto sm:square"></div>
-      <p className="self-center md:text-lg md:col-span-2 md:text-center md:px-4">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae
-        architecto incidunt aperiam nam cum rerum.
-      </p>
+      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div className="bg-white py-8 px-6 shadow rounded-lg sm:px-10">
+          <form className="mb-0 space-y-6" action="#" method="POST">
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Email address
+              </label>
+              <div className="mt-1">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  className=""
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Password
+              </label>
+              <div className="mt-1">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autoComplete="current-password"
+                  required
+                  className=""
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                htmlFor="company-size"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Company size
+              </label>
+              <div className="mt-1">
+                <select name="company-size" id="company-size" className="">
+                  <option value="">Please select</option>
+                  <option value="small">1 to 10 employees</option>
+                  <option value="medium">11 to 50 employees</option>
+                  <option value="large">50+ employees</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="flex items-center">
+              <input
+                id="terms-and-privacy"
+                name="terms-and-privacy"
+                type="checkbox"
+                className=""
+              />
+              <label
+                htmlFor="terms-and-privacy"
+                className="ml-2 block text-sm text-gray-900"
+              >
+                I agree to the
+                <Link
+                  href="#"
+                  className="text-indigo-600 hover:text-indigo-500"
+                >
+                  Terms
+                </Link>
+                and
+                <Link
+                  href="#"
+                  className="text-indigo-600 hover:text-indigo-500"
+                >
+                  Privacy Policy
+                </Link>
+                .
+              </label>
+            </div>
+
+            <div>
+              <button
+                type="submit"
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                Sign up
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
